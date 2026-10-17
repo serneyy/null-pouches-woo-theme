@@ -1,0 +1,22 @@
+name: Validate and package NULL WooCommerce theme
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  validate-and-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PHP syntax validation
+        run: find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n 1 php -l
+      - name: Create installable WordPress ZIP
+        run: |
+          mkdir -p package/null-pouches-woo-theme
+          rsync -a --exclude='.git' --exclude='.github' --exclude='package' --exclude='README.md' ./ package/null-pouches-woo-theme/
+          cd package && zip -qr ../null-pouches-woo-theme.zip null-pouches-woo-theme
+      - uses: actions/upload-artifact@v4
+        with:
+          name: null-pouches-woo-theme
+          path: null-pouches-woo-theme.zip
+          retention-days: 30

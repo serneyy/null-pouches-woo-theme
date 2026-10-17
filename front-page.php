@@ -1,5 +1,11 @@
-<?php if(!defined('ABSPATH'))exit;get_header(); ?>
-<main><section class="null-hero null-container"><div><span class="null-eyebrow">THE FUTURE IS NULL.</span><h1>ZERO NICOTINE.<br><span>FULL POTENTIAL.</span></h1><p>Nicotine-free pouches designed to help you focus, get energy and sleep better.</p><a class="null-button" href="<?php echo esc_url(null_shop_url()); ?>">Explore the collection →</a></div><img alt="NULL functional pouches" src="https://cdn.shopify.com/s/files/1/0685/9060/0494/files/product_image_pc.png?v=1792017217"></section>
-<section class="null-container null-products" id="products"><div class="null-section-head"><span class="null-eyebrow">THE COLLECTION</span><h2>CHOOSE YOUR MODE.</h2></div><div class="null-grid">
-<?php $items=[['focus','FOCUS','Make room for clarity.','https://cdn.shopify.com/s/files/1/0685/9060/0494/files/focus.png?v=1792061193'],['energy','ENERGY','For your on-the-go moments.','https://cdn.shopify.com/s/files/1/0685/9060/0494/files/energy.png?v=1792061190'],['sleep','SLEEP','Switch to evening mode.','https://cdn.shopify.com/s/files/1/0685/9060/0494/files/sleep.png?v=1792061197']];foreach($items as $item){$p=get_page_by_path($item[0],OBJECT,'product');$url=$p?get_permalink($p->ID):null_shop_url();?><article class="null-card"><a href="<?php echo esc_url($url); ?>"><img loading="lazy" alt="<?php echo esc_attr($item[1]); ?>" src="<?php echo esc_url($item[3]); ?>"><h3><?php echo esc_html($item[1]); ?></h3><p><?php echo esc_html($item[2]); ?></p><span>View product →</span></a></article><?php } ?>
-</div></section><section id="about" class="null-about null-container"><span class="null-eyebrow">WHAT IS NULL?</span><h2>FUNCTIONAL POUCHES.<br>WITHOUT NICOTINE.</h2><p>NULL is a nicotine-free and tobacco-free range of functional pouches. Find your moment, without nicotine.</p><a class="null-button" href="<?php echo esc_url(null_shop_url()); ?>">Shop NULL →</a></section></main><?php get_footer(); ?>
+<?php
+/**
+ * Original NULL landing HTML per language. The included files are complete
+ * documents so they can retain their CSS, JS, font layout and animations.
+ * Each template calls wp_head(), wp_body_open(), and wp_footer().
+ */
+if (!defined('ABSPATH')) { exit; }
+$lang = function_exists('null_landing_language') ? null_landing_language() : 'en';
+$path = get_theme_file_path('landing/' . $lang . '.php');
+if (!file_exists($path)) { $path = get_theme_file_path('landing/en.php'); }
+include $path;
