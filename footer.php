@@ -1,0 +1,1 @@
+<footer class="null-footer"><div class="null-container"><strong>NULL.</strong><p>Nicotine-free functional pouches.</p><small>© <?php echo esc_html(date_i18n('Y')); ?> NULL / ENORDA s.r.o. | <a href="mailto:help@nullpouches.com">help@nullpouches.com</a></small></div></footer><?php wp_footer(); ?></body></html>

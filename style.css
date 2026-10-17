@@ -1,0 +1,10 @@
+/*
+Theme Name: NULL Pouches WooCommerce
+Theme URI: https://github.com/serneyy/null-pouches-woo-theme
+Author: NULL
+Description: Dark WooCommerce storefront for NULL Pouches.
+Version: 0.1.0
+Text Domain: null-pouches
+Requires PHP: 7.4
+*/
+body{margin:0;background:#030305;color:#fff;font-family:Inter,Arial,sans-serif}a{color:inherit}img{max-width:100%;height:auto}

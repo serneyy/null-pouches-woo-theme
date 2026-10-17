@@ -1,0 +1,1 @@
+<?php if(!defined('ABSPATH'))exit;get_header(); ?><main class="null-container null-store"><?php if(function_exists('woocommerce_content'))woocommerce_content();else echo '<p>Activate WooCommerce to show the store.</p>'; ?></main><?php get_footer(); ?>
